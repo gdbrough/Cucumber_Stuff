@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:jms="http://www.springframework.org/schema/jms"
+	xmlns:lang="http://www.springframework.org/schema/lang" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Static Factory Initialisation -->
+	<bean id="clientService" class="com.training.ClientService" factory-method="createInstance" />
+		
+	<!-- Factory Method Instantiation -->	
+ 	<bean id="serviceLocator" class="com.training.DefaultServiceLocator" />
+ 	<bean id="accountService" factory-bean="serviceLocator" factory-method="createAccountServiceInstance" />
+ 	
+</beans>

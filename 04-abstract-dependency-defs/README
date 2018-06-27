@@ -1,0 +1,20 @@
+--------------
+config package
+--------------
+
+Define through an abstract class or an interface needed components a user of 
+the library has to add.
+
+A simple example for this pattern is defining infrastructure components through 
+an interface, as we do here.  And create a configuration class like AppConfig.
+
+When someone wants to use the library, they need to create an implementation of 
+InfrastructureConfig and add it to the ApplicationContext. This way the library developer 
+doesn’t need to think of environments in which the classes will run, it’s up to the user.
+
+Think of abstract configuration classes defining some Spring beans fully, some just 
+as abstract methods and providing default Spring beans for some types. 
+Somebody using the library extends this configuration class, defines the abstract 
+beans and overrides some of the default Spring beans. 
+
+Useful if you're developing a framework of some kind.

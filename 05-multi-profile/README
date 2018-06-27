@@ -1,0 +1,10 @@
+--------------
+config package
+--------------
+
+As per /01-spring-maven-abstract-dependency-defs, but now two implementations of the 
+InfrastructureConfig interface are provided.  We can only autowire one into the 
+AppConfig; only one may be active. 
+
+With the @Profile annotation, configuration classes just get imported if the profile 
+mentioned in the annotation is active.
