@@ -1,0 +1,5 @@
+Removed Tool from Plumber constructor, added @Autowire annotation on the Tool field in Plumber, and 
+qualified the type after the addition of the Wrench, as there is now ambiguity.
+
+@Autowire - wires by type
+@Resource - wires by name

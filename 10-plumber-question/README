@@ -1,0 +1,13 @@
+When asked for a "handyman", create an instance of Plumber called "Mario".
+
+Plumbers come with a Tool of type Hammer, which has a size of 100.
+
+---------
+Extension
+---------
+
+Mario is also going to have another Tool, a Wrench.
+
+Tools are created from a ToolStore which can makeHammer() and makeWrench().
+
+Print the details of the object you've created by asking for the "handyman".
