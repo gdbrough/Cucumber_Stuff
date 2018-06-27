@@ -1,0 +1,17 @@
+Create java_config package.
+
+Create a java configuration that does the same thing as xml_config.
+
+Copy java_config to java_config_ext
+
+Extend by adding AnotherHello, again, as per xml_config.
+
+Copy AppConfig to AppConfigInterdependency.
+
+Register Detail as a bean instead, and build as part of the AnotherBean creation, 
+the Main class should remain unchanged.
+
+Copy java_config.test to java_config_ext.test.
+
+Add testAnotherBeansDetailDescriptionIsSunny test; this should run using either
+AppConfig or AppConfigInterdependency.

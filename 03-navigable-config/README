@@ -1,0 +1,19 @@
+--------------
+config package
+--------------
+
+Separate bean definitions by component and/or layer, e.g. one configuration 
+for low level infrastructure like datasources, one for high level infrastructure 
+components, one for repositories, one for services etc.
+
+When connecting these separate configurations, use this pattern.
+
+Two config files with responsibility for different components. 
+MainService depends on one of the components from ServicesConfig. 
+By importing the ServicesConfig, all Spring beans from the ServicesConfig are available, 
+but instead of autowiring those components directly, wire the configuration class 
+itself into the MainConfig and use it to reference beans from it.
+
+Building configuration files this way, it’s easy to navigate through all 
+dependencies by jumping directly into the method that defines the used component, 
+even if the configuration class is in a jar on the classpath.
