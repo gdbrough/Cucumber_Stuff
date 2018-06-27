@@ -1,0 +1,5 @@
+Shapes have a getArea()
+
+The context defines a Circle with radius 10, and Rectangle with width 10, length 20
+
+App should provide areas.
