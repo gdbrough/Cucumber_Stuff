@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+      http://www.springframework.org/schema/beans/spring-beans.xsd">      
+
+	<!--  Looks for the bean that has the same name as the property 
+		  to be autowired and is passed as an argument to byName. -->
+	<bean id="customer" class="name.Customer" autowire="byName" />
+		
+	<bean id="address" class="name.Address" >
+		<property name="fulladdress" value="Block A 888, CA" />
+	</bean>
+	
+</beans>

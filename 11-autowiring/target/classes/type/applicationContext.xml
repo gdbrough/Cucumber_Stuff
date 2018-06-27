@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+      http://www.springframework.org/schema/beans/spring-beans.xsd">      
+
+	<!--  Looks at the bean type as specified by the argument passed to 
+		  byType in the XML configuration file. Autowiring is performed if there is 
+		  exactly one bean with the specified type in the container; 
+		  otherwise, a fatal exception is thrown -->
+	<bean id="person" class="type.Person" autowire="byType" />
+		
+	<bean id="invisible" class="type.Ability" >
+		<property name="skill" value="Invisible" />
+	</bean>
+	
+</beans>

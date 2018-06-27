@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+      http://www.springframework.org/schema/beans/spring-beans.xsd">      
+
+	<!-- Similar to byType and is applied only to constructor arguments. 
+		 Autowiring is performed if there is exactly one bean that matches the constructor 
+		 argument type; otherwise, a fatal exception is thrown. -->
+	<bean id="developer" class="constructor.Developer" autowire="constructor" />
+		
+	<bean id="language" class="constructor.Language" >
+		<property name="name" value="Java" />
+	</bean>
+	
+</beans>

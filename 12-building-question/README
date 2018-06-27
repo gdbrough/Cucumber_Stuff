@@ -1,0 +1,11 @@
+Can only work with the interface for the Builder, if using an aspect that intercepts
+a method of the Builder.
+
+Tried the aspect working with the interface = no change.
+
+Fixed by casting and using interface in the main. Odd.
+
+To make this work you need to add proxyTargetClass=true in 
+aop config like @EnableAspectJAutoProxy(proxyTargetClass=true) for 
+java based configuration or <aop:config proxy-target-class="true"></aop:config> 
+for xml based configuration. This way spring aop will add the proxies forcefully.

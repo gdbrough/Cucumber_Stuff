@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:jms="http://www.springframework.org/schema/jms"
+	xmlns:lang="http://www.springframework.org/schema/lang" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop.xsd 
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context.xsd"> 
+
+	<context:annotation-config />
+	<aop:aspectj-autoproxy />
+	<aop:config proxy-target-class="true"></aop:config>
+
+
+	<bean name="newAspect" class="annotations.MyAspect" />
+
+
+	<!-- <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"> 
+		</bean> -->
+
+	<!-- add another schema, only available using xmlns:context above - extend 
+		the schema location slightly -->
+
+
+	<bean id="plumberBean" class="annotations.Plumber">
+		<property name="cost" value="${plumber.cost}" />
+		<property name="number" value="${plumber.number}" />
+		<property name="days" value="${plumber.days}" />
+	</bean>
+
+	<bean id="builderBean" class="annotations.Builder">
+		<property name="cost" value="${builder.cost}" />
+		<property name="days" value="${builder.days}" />
+		<property name="number" value="${builder.number}" />
+	</bean>
+
+	<bean id="electricianBean" class="annotations.Electrician">
+		<property name="cost" value="${electrician.cost}" />
+		<property name="days" value="${electrician.days}" />
+		<property name="number" value="${electrician.number}" />
+	</bean>
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="classpath:app.properties" />
+	</bean>
+
+</beans> 
